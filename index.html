@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolzinha 💖</title>
+<style>
+  /* Fundo branco e centralização */
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Texto central com brilho e pulsação */
+  h1 {
+    position: relative;
+    font-size: 3em;
+    color: #ff4081;
+    text-shadow: 0 0 10px #ff80ab, 0 0 20px #ff4081, 0 0 40px #ff80ab;
+    animation: pulse 2s infinite;
+    z-index: 2;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.9; }
+  }
+
+  /* Corações caindo */
+  .heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4d6d;
+    font-size: 18px;
+    opacity: 0.8;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1>💖 Carolzinha, eu te amo 💖</h1>
+
+<script>
+  // Função que cria corações animados
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '💖';
+    document.body.appendChild(heart);
+
+    const size = Math.random() * 20 + 10;
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = size + 'px';
+    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+
+    setTimeout(() => heart.remove(), 6000);
+  }
+
+  // Criar vários corações continuamente
+  setInterval(createHeart, 150);
+</script>
+
+</body>
+</html>
