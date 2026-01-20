@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/buxxat-tefma0-rectof/',
+  base: '/Carol-te-mal/',
   plugins: []
 })
